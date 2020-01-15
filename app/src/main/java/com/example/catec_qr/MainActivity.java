@@ -20,8 +20,10 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    mAuth = FirebaseAuth.getInstance();
     SurfaceView surfaceView;
     TextView textView;
     CameraSource cameraSource;

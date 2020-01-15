@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "135771643514",
+    "firebase_url": "https://catecqr-7dcfa.firebaseio.com",
+    "project_id": "catecqr-7dcfa",
+    "storage_bucket": "catecqr-7dcfa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135771643514:android:13629c104549d833de65c3",
+        "android_client_info": {
+          "package_name": "com.example.catec_qr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135771643514-3dee0tnq1b3ghu8imvond6q5ih5h8tav.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.catec_qr",
+            "certificate_hash": "fe5ab0ce9b7dcc19adaa6f966f2bf3b82a6838bf"
+          }
+        },
+        {
+          "client_id": "135771643514-5mokhpskb1s06buvecqbej2j71ha0fa9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrZF7KPL11hcBncwEbAzEEtPQq3baoDFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135771643514-5mokhpskb1s06buvecqbej2j71ha0fa9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
