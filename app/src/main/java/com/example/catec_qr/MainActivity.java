@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     CameraSource cameraSource;
     BarcodeDetector barcodeDetector;
+<<<<<<< HEAD
     boolean ondetimedone=false;
+=======
+>>>>>>> c038e2092265526aa094c2fdee99978692119454
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         surfaceView=(SurfaceView)findViewById(R.id.camerapreview);
         textView=(TextView)findViewById(R.id.textView);
         barcodeDetector=new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
+<<<<<<< HEAD
+=======
+        final String className;
+
+>>>>>>> c038e2092265526aa094c2fdee99978692119454
         cameraSource=new CameraSource.Builder(this,barcodeDetector).setRequestedPreviewSize(640,480).build();
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
@@ -61,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             public void release() {
 
             }
+<<<<<<< HEAD
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
 
@@ -79,6 +88,31 @@ public class MainActivity extends AppCompatActivity {
                      ondetimedone=true;}}
                      }
 
+=======
+
+            @Override
+            public void receiveDetections(Detector.Detections<Barcode> detections) {
+                final SparseArray<Barcode> qrCodes=detections.getDetectedItems();
+                if(qrCodes.size()!=0){
+                    textView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Vibrator vibrator=(Vibrator)getApplicationContext().getSystemService(VIBRATOR_SERVICE);
+                            vibrator.vibrate(500);
+                            String s;
+                            s=(qrCodes.valueAt(0).displayValue);
+                            textView.setText(s);
+                            if(s.equals("kekActivity")) {
+                                Intent kek = new Intent(MainActivity.this,kekActivity.class);
+                                startActivity(kek);
+                            }
+                                                }
+
+
+                    });
+                                                           }
+            }
+>>>>>>> c038e2092265526aa094c2fdee99978692119454
         });
 
     }
