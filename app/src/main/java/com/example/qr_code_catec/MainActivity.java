@@ -51,10 +51,8 @@ public class MainActivity extends AppCompatActivity {
         ondetimedone=false;
 
         List<Statya> statyaList = databaseHandler.getAllStatyas();
-        for(Statya statya: statyaList){
-            Log.d("TEST ", "ID "+statya.getId()+", Заголовок "+ statya.getZag()+", Текст "+statya.getTekst());
-        }
-
+        Statya s1=databaseHandler.getStatya(1);
+        textView.append(s1.getTekst());
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
