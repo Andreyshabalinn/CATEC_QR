@@ -7,6 +7,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.widget.TextView;
 
 
 public class kekActivity extends AppCompatActivity {
@@ -16,7 +17,10 @@ public class kekActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kek);
-
+        Intent stintent = getIntent();
+        String s1= stintent.getStringExtra("Tekst");
+        TextView stat = findViewById(R.id.Tekst);
+        stat.setText(s1);
 
     }
 

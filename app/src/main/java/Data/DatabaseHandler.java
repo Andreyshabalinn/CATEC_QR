@@ -75,4 +75,28 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         return statyaList;
     }
+    public void deleteAllStatyas(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<Statya> statyaList = new ArrayList<>();
+        String deleteAllStatyas="DELETE FROM "+Util.TABLE_NAME;
+        Cursor cursor = db.rawQuery(deleteAllStatyas,null);
+    }
+    public int updateStatya (Statya statya) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Util.KEY_ZAG,statya.getZag());
+        contentValues.put(Util.KEY_TEKST,statya.getTekst());
+
+        return db.update(Util.TABLE_NAME, contentValues, Util.KEY_ID + "=?",
+                new String[]{String.valueOf(statya.getId())});
+    }
+    public void deleteStatya(Statya statya){
+SQLiteDatabase db = this.getWritableDatabase();
+db.delete(Util.TABLE_NAME, Util.KEY_ID + "=?",
+        new String[]{String.valueOf(statya.getId())});
+db.close();
+
+
+    }
 }
