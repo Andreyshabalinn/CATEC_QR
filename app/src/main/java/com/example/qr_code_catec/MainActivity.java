@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DatabaseHandler databaseHandler= new DatabaseHandler(this);
-//       databaseHandler.addStaiya(new Statya("О нас", "ЦАТЭК КОЛЛЕДЖ РАСПОЛОЖЕННЫЙ НА УЛИЦЕ ДОСТЫК ОСНОВАН ДАВНО ДАВНО"));
+ databaseHandler.addStaiya(new Statya("О нас", "ЦАТЭК КОЛЛЕДЖ РАСПОЛОЖЕННЫЙ НА УЛИЦЕ ДОСТЫК ОСНОВАН ДАВНО ДАВНО"));
 //        databaseHandler.addStaiya(new Statya("Контакты", "ТЕЛЕФОН 87714010218"));
 //        databaseHandler.addStaiya(new Statya("Преподаватели", "ИВАН АНДРЕЕВИЧ, УСАТОВА ОЛЬГА, НЕХОРОШЕВ ВЛАДИМИР"));
 //        databaseHandler.addStaiya(new Statya("Кабинеты", "ПРОГРАММИСТ, ТЗИ, РЭС, ИСТ"));
@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
         cameraSource=new CameraSource.Builder(this,barcodeDetector).setRequestedPreviewSize(640,480).build();
         ondetimedone=false;
 
+
+//        Statya delstatya= databaseHandler.getStatya(1);
+//        databaseHandler.deleteStatya(delstatya);
         List<Statya> StatyaList = databaseHandler.getAllStatyas();
         for(Statya statya : StatyaList){
             Log.d("Statya info", "ID"+statya.getId()+", Zag "+statya.getZag()+", Tekst "+statya.getTekst());
-
         }
-        Statya delstatya= databaseHandler.getStatya(1);
-        databaseHandler.deleteStatya(delstatya);
 //            Statya statya = databaseHandler.getStatya(3);
 //            statya.setZag("Преподаватели");
 //            statya.setTekst("ИВАН АНДРЕЕВИЧ, УСАТОВА ОЛЬГА, НЕХОРОШЕВ ВЛАДИМИР");
@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d("StatyaInfo: ","ID"+statya.getId()+", Zag" + statya.getZag()
 //            +", Tekst" + statya.getTekst() + ", updatedStatyaId " + updatedStatyaId);
 
-//        final Statya  s1=databaseHandler.getStatya(1);
-//        final Statya  s2=databaseHandler.getStatya(2);
-//        final Statya  s3=databaseHandler.getStatya(3);
-//        final Statya  s4=databaseHandler.getStatya(4);
+        final Statya  s1;
+        final Statya  s2;
+        final Statya  s3;
+        final Statya  s4;
 
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
 //                            startActivity(intent);
 //                        }
 //                        else {
-//                            intent.putExtra("Tekst","Отсканнированного Вами QR кода нет в нашей базе, Содержание QR кода: "+s);
-//                            startActivity(intent);
+                            intent.putExtra("Tekst","Отсканнированного Вами QR кода нет в нашей базе, Содержание QR кода: "+s);
+                            startActivity(intent);
 //                        }
                         ondetimedone=true;
                        finish();
